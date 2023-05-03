@@ -1,0 +1,20 @@
+.example-card {
+  max-width: 300px;
+  text-align: justify;
+}
+
+.header-image {
+  background-size: cover;
+  width: 250px;
+  height: 250px;
+  display: block;
+  margin: auto;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
