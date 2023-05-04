@@ -12,5 +12,33 @@
       "email": "aldogc@gmail.com",
       "phone": "920392103"
     }
+  ],
+  "trips": [
+    {
+      "id": 1,
+      "origin": "Lisboa",
+      "destination": "Piura",
+      "date": "12/12/2022"
+    },
+    {
+      "origin": "Washington D.C.",
+      "destination": "Lima",
+      "id": 2
+    },
+    {
+      "origin": "Washington D.C.",
+      "destination": "Lima",
+      "id": 3
+    },
+    {
+      "origin": "Lima",
+      "destination": "New York",
+      "id": 4
+    },
+    {
+      "origin": "Lima",
+      "destination": "New York",
+      "id": 5
+    }
   ]
 }

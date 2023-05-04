@@ -6,6 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/user/login/login.component';
+import { NewTripComponent } from './components/user/trips/new-trip/new-trip.component';
+import { ViewTripsComponent } from "./components/user/trips/view-trips/view-trips.component";
+import { EditloginComponent } from './components/user/editlogin/editlogin.component';
 
 // Import Shared/Material.Module.ts
 import { MaterialModule } from 'src/shared/material.module';
@@ -13,7 +16,8 @@ import { DashboardComponent } from './components/user/dashboard/dashboard.compon
 import { FormsModule } from "@angular/forms";
 import { RegisterComponent } from './components/user/register/register.component';
 import { ToolbarComponent } from './components/user/toolbar/toolbar.component';
-import { EditloginComponent } from './components/user/editlogin/editlogin.component';
+import { DialogComponent } from './dialog/dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
@@ -24,6 +28,9 @@ import { EditloginComponent } from './components/user/editlogin/editlogin.compon
     RegisterComponent,
     ToolbarComponent,
     EditloginComponent
+    NewTripComponent,
+    DialogComponent,
+    ViewTripsComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +38,8 @@ import { EditloginComponent } from './components/user/editlogin/editlogin.compon
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
