@@ -7,3 +7,19 @@
     View trips
   </button>
 </div>
+<div class="card-container">
+  <mat-card *ngFor="let product of products" class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{ product.name }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="product.imageUrl" alt="{{ product.name }}" class="header-image">
+    <mat-card-content>
+      <mat-card-subtitle>{{ product.description }}</mat-card-subtitle>
+      <p>{{ product.price }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button  class="width" mat-raised-button mat-button color="primary">Buy</button>
+      <button mat-button>Share</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
