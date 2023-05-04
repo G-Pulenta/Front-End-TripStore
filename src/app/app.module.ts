@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/user/login/login.component';
+import { NewTripComponent } from './components/user/trips/new-trip/new-trip.component';
 
 // Import Shared/Material.Module.ts
 import { MaterialModule } from 'src/shared/material.module';
@@ -13,7 +14,8 @@ import { DashboardComponent } from './components/user/dashboard/dashboard.compon
 import { FormsModule } from "@angular/forms";
 import { RegisterComponent } from './components/user/register/register.component';
 import { ToolbarComponent } from './components/user/toolbar/toolbar.component';
-import { NewTripComponent } from './components/user/trips/new-trip/new-trip.component';
+import { DialogComponent } from './dialog/dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
@@ -24,6 +26,7 @@ import { NewTripComponent } from './components/user/trips/new-trip/new-trip.comp
     RegisterComponent,
     ToolbarComponent,
     NewTripComponent
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { NewTripComponent } from './components/user/trips/new-trip/new-trip.comp
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
