@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "username": "Lucas",
+      "password": "Lucas123",
+      "email": "lbenedetti@gmail.com",
+      "phone": "968184053"
+    },
+    {
+      "username": "Aldo",
+      "password": "Aldo123",
+      "email": "aldogc@gmail.com",
+      "phone": "920392103"
+    }
+  ]
+}
