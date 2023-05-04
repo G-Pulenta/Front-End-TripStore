@@ -13,6 +13,7 @@ import { DashboardComponent } from './components/user/dashboard/dashboard.compon
 import { FormsModule } from "@angular/forms";
 import { RegisterComponent } from './components/user/register/register.component';
 import { ToolbarComponent } from './components/user/toolbar/toolbar.component';
+import { EditloginComponent } from './components/user/editlogin/editlogin.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ToolbarComponent } from './components/user/toolbar/toolbar.component';
     LoginComponent,
     DashboardComponent,
     RegisterComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    EditloginComponent
   ],
   imports: [
     BrowserModule,
