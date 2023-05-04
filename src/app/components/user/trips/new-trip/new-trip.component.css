@@ -1,0 +1,41 @@
+.trip-form {
+  display: flex;
+  max-width: 400px;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.trip-form mat-form-field {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.trip-form .form-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-actions button {
+  margin: 0 10px;
+  /*outline: red dashed 1px;*/
+}
+
+.add-button {
+  background-color: #359341;
+  color: white;
+}
+
+.cancel-button {
+  color: #b24a38;
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+  padding: 1rem;
+}
