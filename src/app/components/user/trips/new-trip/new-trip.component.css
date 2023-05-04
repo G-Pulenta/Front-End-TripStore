@@ -30,3 +30,12 @@
 .cancel-button {
   color: #b24a38;
 }
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+  padding: 1rem;
+}

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/user/login/login.component';
 import { NewTripComponent } from './components/user/trips/new-trip/new-trip.component';
+import { ViewTripsComponent } from "./components/user/trips/view-trips/view-trips.component";
 
 // Import Shared/Material.Module.ts
 import { MaterialModule } from 'src/shared/material.module';
@@ -25,8 +26,9 @@ import {MatDialogModule} from "@angular/material/dialog";
     DashboardComponent,
     RegisterComponent,
     ToolbarComponent,
-    NewTripComponent
-    DialogComponent
+    NewTripComponent,
+    DialogComponent,
+    ViewTripsComponent
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { LoginComponent } from "./components/user/login/login.component";
 import { DashboardComponent } from "./components/user/dashboard/dashboard.component";
 import { RegisterComponent } from './components/user/register/register.component';
 import {NewTripComponent} from "./components/user/trips/new-trip/new-trip.component";
+import {ViewTripsComponent} from "./components/user/trips/view-trips/view-trips.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'register', component: RegisterComponent},
   { path: 'new-trip', component: NewTripComponent },
+  { path: 'view-trips', component: ViewTripsComponent },
 ];
 
 @NgModule({
