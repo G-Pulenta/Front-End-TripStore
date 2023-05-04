@@ -24,17 +24,8 @@
       "origin": "Washington D.C.",
       "destination": "Lima",
       "id": 3
-    },
-    {
-      "origin": "Lima",
-      "destination": "New York",
-      "id": 4
-    },
-    {
-      "origin": "Lima",
-      "destination": "New York",
-      "id": 5
     }
+
   ],
   "products": [
     {

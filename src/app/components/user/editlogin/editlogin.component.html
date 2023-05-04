@@ -3,48 +3,50 @@
     <span>TripStore</span>
   </mat-toolbar-row>
 </mat-toolbar>
-
 <body>
 <div class="container">
   <img src="https://media.licdn.com/dms/image/D4E03AQFwSLEEU0ReXg/profile-displayphoto-shrink_800_800/0/1678321150095?e=2147483647&v=beta&t=ALRF4hh9XBsQYGrOGB-Zcq8rNtfqejg-QCifCZZqpro" alt="Profile Picture">
   <div class="caption">Profile Picture</div>
   <form>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" value="Luis David" required>
-
-    <label for="lastname">Last Name:</label>
-    <input type="text" id="lastname" name="lastname" value="Maco Cangalaya" required>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" value="chamaco@example.com" required>
-
-    <label for="new-password">New Password:</label>
-    <input type="password" id="new-password" name="new-password" required>
-
-    <label for="confirm-password">Confirm Password:</label>
-    <input type="password" id="confirm-password" name="confirm-password" required>
-
-    <label for="birthdate">Birthdate:</label>
-    <input type="date" id="birthdate" name="birthdate" value="2023-01-01" required>
-
-    <label for="country">Country:</label>
-    <select id="country" name="country" required>
-      <option value="pe">Perú</option>
-      <option value="cl">Chile</option>
-      <option value="es">España</option>
-      <option value="pa">Panamá</option>
-      <option value="mx">México</option>
-      <option value="us">Estados Unidos</option>
-      <option value="ca">Canadá</option>
-      <option value="br">Brasil</option>
-      <option value="ar">Argentina</option>
-    </select>
-
-    <label for="city">City:</label>
-    <input type="text" id="city" name="city" value="Lima" required>
+    <mat-form-field class="width">
+      <mat-label>Username</mat-label>
+      <input matInput type="text" id="username" name="username" required>
+    </mat-form-field>
+    <mat-form-field class="width">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" id="name" name="lastname" required>
+    </mat-form-field>
+    <mat-form-field class="width">
+      <mat-label>Email</mat-label>
+      <input matInput type="text" id="email" name="email" required>
+    </mat-form-field>
+    <mat-form-field class="width">
+      <mat-label>New Password</mat-label>
+      <input matInput type="password" id="password" name="password" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="width">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="fill" class="width">
+    <mat-label>Country</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let Country of countries" [value]="Country.value">
+          {{Country.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="width">
+      <mat-label>City</mat-label>
+      <input matInput type="text" id="city" name="city" required>
+    </mat-form-field>
 
     <button type="submit">Save Changes</button>
     <button type="button" id="cancelar" routerLink="/dashboard">Cancel</button>
   </form>
+
 </div>
 </body>

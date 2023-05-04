@@ -18,6 +18,7 @@ import { RegisterComponent } from './components/user/register/register.component
 import { ToolbarComponent } from './components/user/toolbar/toolbar.component';
 import { DialogComponent } from './components/user/dialog/dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import {MatDialogModule} from "@angular/material/dialog";
     MaterialModule,
     HttpClientModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
