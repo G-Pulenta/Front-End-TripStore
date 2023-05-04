@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {ProductService} from "../../../services/product.service";
+import {Product} from "../../../models/product.model";
 
 @Component({
   selector: 'app-dashboard',
@@ -6,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+  products: Product[] = [];
 
+  constructor(private productService: ProductService) {}
+
+  ngOnInit(): void {
+    this.getProducts();
+  }
+
+  getProducts(): void {
+    this.productService.getProducts().subscribe(products => {
+      this.products = products;
+    });
+  }
 }

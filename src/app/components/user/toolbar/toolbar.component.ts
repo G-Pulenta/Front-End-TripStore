@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {DialogComponent} from "../../../dialog/dialog.component";
+import {DialogComponent} from "../dialog/dialog.component";
 import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-toolbar',
@@ -16,7 +16,7 @@ export class ToolbarComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('El diálogo se cerró');
+      console.log('Dialog was closed');
     });
   }
 }
