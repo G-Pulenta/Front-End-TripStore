@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {DialogComponent} from "../../../dialog/dialog.component";
+import {DialogComponent} from "../../../dialogNotifications/dialog.component";
 import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-toolbar',

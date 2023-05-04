@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 @Component({
-  selector: 'app-dialog-component',
+  selector: 'app-dialogNotifications-component',
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.css']
 })

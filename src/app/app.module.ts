@@ -13,7 +13,7 @@ import { DashboardComponent } from './components/user/dashboard/dashboard.compon
 import { FormsModule } from "@angular/forms";
 import { RegisterComponent } from './components/user/register/register.component';
 import { ToolbarComponent } from './components/user/toolbar/toolbar.component';
-import { DialogComponent } from './dialog/dialog.component';
+import { DialogComponent } from './dialogNotifications/dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
 
 
