@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/user/login/login.component';
+import { NewTripComponent } from './components/user/trips/new-trip/new-trip.component';
 
 // Import Shared/Material.Module.ts
 import { MaterialModule } from 'src/shared/material.module';
@@ -24,6 +25,7 @@ import {MatDialogModule} from "@angular/material/dialog";
     DashboardComponent,
     RegisterComponent,
     ToolbarComponent,
+    NewTripComponent
     DialogComponent
   ],
   imports: [
