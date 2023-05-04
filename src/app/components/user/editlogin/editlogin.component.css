@@ -20,7 +20,7 @@ form {
   background-color: #fff;
   border-radius: 5px;
   padding: 30px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .width {
   width: 100%;
@@ -65,5 +65,5 @@ button:disabled {
 
 button:hover {
   transform: scale(1.05);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }

@@ -16,7 +16,7 @@ export class ToolbarComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('El diálogo se cerró');
+      console.log('Dialog was closed');
     });
   }
 }
