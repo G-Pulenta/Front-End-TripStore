@@ -20,6 +20,8 @@ import { DialogComponent } from './components/user/dialog/dialog.component';
 // import { DialogComponent } from './dialogNotifications/dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatSelectModule} from "@angular/material/select";
+import {NgOptimizedImage} from "@angular/common";
+import {MatMenuModule} from "@angular/material/menu";
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import {MatSelectModule} from "@angular/material/select";
     HttpClientModule,
     FormsModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    NgOptimizedImage,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

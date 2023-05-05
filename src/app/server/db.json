@@ -6,6 +6,13 @@
       "email": "lbenedetti2306@gmail.com",
       "phone": "968184053",
       "id": 1
+    },
+    {
+      "username": "",
+      "password": "",
+      "email": "",
+      "phone": "",
+      "id": 2
     }
   ],
   "trips": [
@@ -18,14 +25,15 @@
     {
       "origin": "Washington D.C.",
       "destination": "Lima",
-      "id": 2
+      "id": 2,
+      "date": "12/12/2022"
     },
     {
       "origin": "Washington D.C.",
       "destination": "Lima",
-      "id": 3
+      "id": 3,
+      "date": "12/12/2022"
     }
-
   ],
   "products": [
     {

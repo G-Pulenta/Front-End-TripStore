@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {ProductService} from "../../../services/product.service";
+import {Component, OnInit} from '@angular/core';
+import {ProductService} from "../../../services/product/product.service";
 import {Product} from "../../../models/product.model";
 
 @Component({
@@ -7,7 +7,7 @@ import {Product} from "../../../models/product.model";
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit{
   products: Product[] = [];
 
   constructor(private productService: ProductService) {}

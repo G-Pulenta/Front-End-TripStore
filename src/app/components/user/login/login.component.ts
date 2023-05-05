@@ -6,13 +6,11 @@ import { User } from '../../../models/user.model';
 import { environment } from '../../../../environments/environment';
 import lottie from 'lottie-web';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-
 
 export class LoginComponent implements OnInit {
   username: string = '';
@@ -21,6 +19,9 @@ export class LoginComponent implements OnInit {
 
   constructor(private http: HttpClient, private router: Router, private snackBar: MatSnackBar) {}
 
+  goToRegister() {
+    this.router.navigate(['/register']);
+  }
   validateUser() {
 
     const snackBarConfig: MatSnackBarConfig = {

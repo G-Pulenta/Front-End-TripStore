@@ -7,9 +7,11 @@
 .register {
   width: 100%;
   max-width: 330px;
-  padding: 15px;
   margin: auto;
   text-align: center;
+  padding: 50px;
+  background: #cccccc;
+  border-radius: 20px;
 }
 .width {
   width: 100%;

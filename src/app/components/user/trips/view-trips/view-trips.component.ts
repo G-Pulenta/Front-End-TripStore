@@ -4,7 +4,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {NgForm} from "@angular/forms";
-import {TripDataService} from "../../../../services/trip-data.service";
+import {TripDataService} from "../../../../services/trip/trip-data.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({

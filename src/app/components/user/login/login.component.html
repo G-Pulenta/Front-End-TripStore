@@ -1,8 +1,8 @@
-<mat-grid-list cols="2" rowHeight="1:1">
+<mat-grid-list cols="2" rowHeight="1:1" class="container">
   <mat-grid-tile>
     <div class="body">
-      <div class="login">
-        <img src="../../../../assets/images/logo-login.png" alt="Logo TripStore">
+      <mat-card class="login">
+        <img src="../../../../assets/images/logo-login.png" alt="Logo TripStore" height="125" width="250">
         <h1>Login</h1>
         <mat-form-field class="width" appearance="fill">
           <mat-label>Username</mat-label>
@@ -10,13 +10,11 @@
         </mat-form-field>
         <mat-form-field class="width" appearance="fill">
           <mat-label>Password</mat-label>
-          <input matInput [(ngModel)]="password">
+          <input matInput [(ngModel)]="password" type="password">
         </mat-form-field>
-        <br>
-        <button class="width" mat-raised-button mat-button color="primary" (click)="validateUser()">Sign In</button>
-        <br>
-        <button class="width" mat-raised-button mat-button color="accent" routerLink="/register">Register</button>
-      </div>
+        <button class="button" mat-raised-button mat-button color="primary" (click)="validateUser()">Sign In</button>
+        <button class="button" mat-raised-button mat-button color="accent" (click)="goToRegister()">Register</button>
+      </mat-card>
     </div>
   </mat-grid-tile>
   <mat-grid-tile>

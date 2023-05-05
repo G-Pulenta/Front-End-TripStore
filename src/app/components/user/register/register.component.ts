@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import lottie from 'lottie-web';
-import {UserService} from "../../../services/user.service";
+import {UserService} from "../../../services/user/user.service";
 import {User} from "../../../models/user.model";
 import {NgForm} from "@angular/forms";
 @Component({

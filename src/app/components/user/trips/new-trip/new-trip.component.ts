@@ -5,7 +5,7 @@ import {NgForm} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {TripDataService} from "../../../../services/trip-data.service";
+import {TripDataService} from "../../../../services/trip/trip-data.service";
 import * as _ from 'lodash';
 
 @Component({

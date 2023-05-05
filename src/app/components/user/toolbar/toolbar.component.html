@@ -14,9 +14,13 @@
     <button mat-icon-button (click)="openDialog()">
       <mat-icon  >notifications</mat-icon>
     </button>
-    <button mat-icon-button routerLink="/edit-login">
-      <mat-icon>account_circle</mat-icon>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>person</mat-icon>
     </button>
-
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Profile</button>
+      <button mat-menu-item>Edit Profile</button>
+      <button mat-menu-item>Close</button>
+    </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>
