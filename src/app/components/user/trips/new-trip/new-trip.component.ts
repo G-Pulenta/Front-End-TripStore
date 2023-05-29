@@ -37,12 +37,13 @@ export class NewTripComponent {
 
   onSubmit() {
     if (this.tripForm.invalid) {
+      this.cancelEditTrip();
       return;
     }
     if (this.isEditMode) {
       this.updateTrip();
     } else {
-      this.addTrip();
+      //this.addTrip();
     }
     this.tripForm.resetForm();
   }

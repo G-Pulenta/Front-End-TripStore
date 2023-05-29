@@ -10,7 +10,10 @@
         </mat-form-field>
         <mat-form-field class="width" appearance="fill">
           <mat-label>Password</mat-label>
-          <input matInput [(ngModel)]="password">
+          <input matInput [(ngModel)]="password" [type]="hide ? 'password' : 'text'" (keyup.enter)="validateUser()">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
         </mat-form-field>
         <br>
         <button class="width" mat-raised-button mat-button color="primary" (click)="validateUser()">Sign In</button>

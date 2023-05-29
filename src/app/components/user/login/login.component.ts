@@ -17,7 +17,7 @@ import lottie from 'lottie-web';
 export class LoginComponent implements OnInit {
   username: string = '';
   password: string = '';
-
+  hide = true;
 
   constructor(private http: HttpClient, private router: Router, private snackBar: MatSnackBar) {}
 
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       const user = users.find(u => u.username === this.username && u.password === this.password);
       if (user) {
         console.log('User validated');
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/home']);
       } else {
         this.snackBar.open('Invalid username or password.', 'Close', snackBarConfig);
         console.log('User not validated');

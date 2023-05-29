@@ -1,3 +1,13 @@
+.dashboard-title {
+  margin: 20px auto;
+}
+.dashboard-title h1 {
+  font-size: 2em;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 .button-container{
   display: flex;
   justify-content: center;

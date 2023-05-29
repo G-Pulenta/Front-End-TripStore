@@ -6,10 +6,12 @@ import { RegisterComponent } from './components/user/register/register.component
 import { EditloginComponent } from './components/user/editlogin/editlogin.component';
 import {NewTripComponent} from "./components/user/trips/new-trip/new-trip.component";
 import {ViewTripsComponent} from "./components/user/trips/view-trips/view-trips.component";
+import {HomeComponent} from "./components/user/home/home.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   {path: 'login', component: LoginComponent},
+  { path: 'home', component: HomeComponent },
   {path: 'dashboard', component: DashboardComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'edit-login', component: EditloginComponent},

@@ -20,6 +20,7 @@ import { DialogComponent } from './components/user/dialog/dialog.component';
 // import { DialogComponent } from './dialogNotifications/dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatSelectModule} from "@angular/material/select";
+import { HomeComponent } from './components/user/home/home.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {MatSelectModule} from "@angular/material/select";
     EditloginComponent,
     NewTripComponent,
     DialogComponent,
-    ViewTripsComponent
+    ViewTripsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
