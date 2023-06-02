@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import {DialogComponent} from "../dialog/dialog.component";
-// import {DialogComponent} from "../../../dialogNotifications/dialog.component";
+
 import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-toolbar',
@@ -10,14 +9,5 @@ import { MatDialog } from '@angular/material/dialog';
 export class ToolbarComponent {
   constructor(public dialog: MatDialog) {}
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(DialogComponent, {
-      width: '500px',
-      height: '500px'
-    });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('Dialog was closed');
-    });
-  }
 }
