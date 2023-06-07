@@ -1,0 +1,40 @@
+<mat-grid-list cols="2" rowHeight="1:1">
+  <mat-grid-tile>
+    <div #lottieContainer id="lottie-container"></div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <div class="body">
+      <form #userForm="ngForm" (ngSubmit)="register()" class="register">
+        <img alt="Register Logo TripStore" height="125" height="100" ngSrc="../../../assets/images/logo-register.svg"
+             priority width="300">
+        <mat-form-field class="width">
+          <mat-label>Username</mat-label>
+          <input [(ngModel)]="user.username" id="username" matInput name="username" required type="text">
+        </mat-form-field>
+        <mat-form-field class="width">
+          <mat-label>Password</mat-label>
+          <input [(ngModel)]="user.password" id="password" matInput name="password" required type="password">
+        </mat-form-field>
+        <mat-form-field class="width">
+          <mat-label>Name</mat-label>
+          <input [(ngModel)]="user.name" id="name" matInput name="name" required type="text">
+        </mat-form-field>
+        <mat-form-field class="width">
+          <mat-label>Last Name</mat-label>
+          <input [(ngModel)]="user.lastname" id="lastname" matInput name="lastname" required type="text">
+        </mat-form-field>
+        <mat-form-field class="width">
+          <mat-label>Email</mat-label>
+          <input [(ngModel)]="user.email" id="email" matInput name="email" required type="email">
+        </mat-form-field>
+        <mat-form-field class="width">
+          <mat-label>Phone</mat-label>
+          <input [(ngModel)]="user.phone" id="phone" matInput name="phone" required type="tel">
+        </mat-form-field>
+        <button [disabled]="!userForm.form.valid" class="width" color="primary" mat-raised-button type="submit">Sign
+          Up
+        </button>
+      </form>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

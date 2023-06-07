@@ -1,0 +1,32 @@
+.centered-input {
+  display: flex;
+  justify-content: center;
+}
+
+.header-image {
+  width: 200px;
+  justify-content: center;
+  margin: 10px;
+}
+
+.mat-column-imageUrl {
+  justify-content: center;
+}
+
+.mat-column-name {
+  justify-content: center;
+}
+
+.mat-column-price {
+  justify-content: center;
+}
+
+.mat-column-description {
+  justify-content: center;
+  text-align: justify;
+}
+
+.mat-column-actions {
+  justify-content: center;
+}
+
