@@ -6,21 +6,19 @@
              priority width="180">
       </div>
     </div>
-    <div class="center-content">
-      <i>Hello, <span class="username">{{ getUsernameFromLocalStorage() }}</span></i>
-    </div>
     <div class="right-content">
-      <button aria-label="Go to add a new trip." color="primary" mat-flat-button routerLink="/new-trip">
-        Add a new trip
-      </button>
-      <button aria-label="Go to view trips added." color="accent" mat-flat-button routerLink="/view-trips">
-        View trips
+      <button mat-icon-button routerLink="/home">
+        <mat-icon>home</mat-icon>
       </button>
       <button (click)="openShoppingCartDialog()" mat-icon-button>
         <mat-icon>shopping_cart</mat-icon>
       </button>
-      <button mat-icon-button routerLink="/my-profile">
+      <button mat-icon-button routerLink="/view-trips">
+        <mat-icon>airplanemode_active</mat-icon>
+      </button>
+      <button mat-stroked-button routerLink="/my-profile">
         <mat-icon>account_circle</mat-icon>
+        {{ getUsernameFromLocalStorage() }}
       </button>
       <button (click)="logout()" mat-icon-button>
         <mat-icon>exit_to_app</mat-icon>
