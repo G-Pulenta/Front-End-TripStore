@@ -25,8 +25,8 @@
     <!-- Form actions -->
     <div class="form-actions">
       <ng-container>
-        <button mat-raised-button color="primary" class="add-trip-button" (click)="addTrip()" [disabled]="!tripForm.form.valid" routerLink="/view-trips">Add trip</button>
-        <button mat-stroked-button color="warn" class="cancel-submit-button" (click)="cancelEdit()" routerLink="/dashboard">Cancel</button>
+        <button mat-raised-button color="accent" class="add-trip-button" (click)="addTrip()" [disabled]="!tripForm.form.valid" routerLink="/view-trips">Add trip</button>
+        <button mat-stroked-button color="warn" class="cancel-submit-button" (click)="cancelEdit()" routerLink="/view-trips">Cancel</button>
       </ng-container>
     </div>
   </form>
