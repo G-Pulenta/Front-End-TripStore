@@ -18,6 +18,24 @@
       "email": "JhonSmith123@hotmail.com",
       "phone": "985172123",
       "id": 2
+    },
+    {
+      "username": "AldoxMar",
+      "password": "aldito",
+      "name": "Aldo",
+      "lastname": "Medina",
+      "email": "u202018286@upc.edu.pe",
+      "phone": "973049310",
+      "id": 3
+    },
+    {
+      "username": "123",
+      "password": "123",
+      "name": "123",
+      "lastname": "123",
+      "email": "123",
+      "phone": "123",
+      "id": 4
     }
   ],
   "trips": [
@@ -26,6 +44,12 @@
       "destination": "Lima",
       "date": "2023-06-08T05:00:00.000Z",
       "id": 1
+    },
+    {
+      "origin": "Lima",
+      "destination": "New York City",
+      "date": "2023-06-16T05:00:00.000Z",
+      "id": 2
     }
   ],
   "products": [
