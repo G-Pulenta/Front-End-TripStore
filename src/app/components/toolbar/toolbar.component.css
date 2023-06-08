@@ -29,3 +29,7 @@ button {
   padding: 10px;
   margin: 10px;
 }
+
+.menu-button {
+  scale: 0.8;
+}

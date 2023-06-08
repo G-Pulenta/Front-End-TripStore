@@ -16,12 +16,19 @@
       <button mat-icon-button routerLink="/view-trips">
         <mat-icon>airplanemode_active</mat-icon>
       </button>
-      <button mat-stroked-button routerLink="/my-profile">
+      <button mat-stroked-button [matMenuTriggerFor]="menu">
         <mat-icon>account_circle</mat-icon>
         {{ getUsernameFromLocalStorage() }}
-      </button>
-      <button (click)="logout()" mat-icon-button>
-        <mat-icon>exit_to_app</mat-icon>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/my-profile" class="menu-button">
+            <mat-icon>account_circle</mat-icon>
+            <span>My Profile</span>
+          </button>
+          <button mat-menu-item (click)="logout()" class="menu-button">
+            <mat-icon>exit_to_app</mat-icon>
+            Logout
+          </button>
+        </mat-menu>
       </button>
     </div>
   </mat-toolbar-row>
