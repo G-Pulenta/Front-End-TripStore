@@ -8,12 +8,13 @@ import {ProductComponent} from "./components/product/product.component";
 import {AuthService} from "./services/auth/auth.service";
 import {NewTripComponent} from "./pages/new-trip/new-trip.component";
 import {ViewTripsComponent} from "./pages/view-trips/view-trips.component";
+import {HomeComponent} from "./pages/home/home.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
-
   {path: 'register', component: RegisterComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthService]},
   {path: 'my-profile', component: ProfileComponent, canActivate: [AuthService]},
   {path: 'products', component: ProductComponent, canActivate: [AuthService]},

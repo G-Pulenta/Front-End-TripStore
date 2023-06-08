@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { UserService } from "../../services/user/user.service";
 import lottie from 'lottie-web';
-import {DashboardComponent} from "../dashboard/dashboard.component";
+import {HomeComponent} from "../home/home.component";
 
 @Component({
   selector: 'app-login',
@@ -34,7 +34,7 @@ export class LoginComponent implements AfterViewInit{
           localStorage.setItem('username', this.username);
           localStorage.setItem('id', response[0].id);
 
-          this.router.navigate(['dashboard']).then(r => DashboardComponent);
+          this.router.navigate(['home']).then(r => HomeComponent);
         } else {
           this.snackBar.open('Invalid username or password.', 'Close', snackBarConfig);
           console.log('User not validated');

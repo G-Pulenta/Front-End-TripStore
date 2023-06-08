@@ -22,6 +22,7 @@ import {CartComponent} from './components/cart/cart.component';
 import {FooterComponent} from './components/footer/footer.component';
 import { NewTripComponent } from './pages/new-trip/new-trip.component';
 import { ViewTripsComponent } from './pages/view-trips/view-trips.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 
@@ -38,7 +39,8 @@ import { ViewTripsComponent } from './pages/view-trips/view-trips.component';
     CartComponent,
     FooterComponent,
     NewTripComponent,
-    ViewTripsComponent
+    ViewTripsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
