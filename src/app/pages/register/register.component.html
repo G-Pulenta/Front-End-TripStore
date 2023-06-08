@@ -31,9 +31,10 @@
           <mat-label>Phone</mat-label>
           <input [(ngModel)]="user.phone" id="phone" matInput name="phone" required type="tel">
         </mat-form-field>
-        <button [disabled]="!userForm.form.valid" class="width" color="primary" mat-raised-button type="submit">Sign
-          Up
+        <button [disabled]="!userForm.form.valid" class="width" color="primary" mat-raised-button type="submit">
+          Sign Up
         </button>
+        <p class="already-account">Already have an account? <a routerLink="/login">Sign In</a></p>
       </form>
     </div>
   </mat-grid-tile>
