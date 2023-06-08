@@ -1,6 +1,8 @@
 import {AfterViewInit, Component, ElementRef, Renderer2, ViewChild} from '@angular/core';
 import {UserService} from "../../services/user/user.service";
 import lottie from 'lottie-web';
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-register',
@@ -11,8 +13,12 @@ export class RegisterComponent implements AfterViewInit {
   user: any = {};
   @ViewChild('lottieContainer') lottieContainer!: ElementRef;
 
-  constructor(private userService: UserService, private renderer: Renderer2) {
-  }
+  constructor(
+    private userService: UserService,
+    private renderer: Renderer2,
+    private snackBar: MatSnackBar,
+    private router: Router
+  ) { }
 
   ngAfterViewInit(): void {
     this.loadAnimation();
@@ -42,5 +48,11 @@ export class RegisterComponent implements AfterViewInit {
           console.error('Error al registrar usuario:', error);
         }
       );
+
+    this.snackBar.open('User registered successfully', 'Close', {
+      duration: 3500
+    });
+
+    this.router.navigate(['login']);
   }
 }
