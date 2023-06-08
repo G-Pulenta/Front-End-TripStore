@@ -1,31 +1,56 @@
 {
   "users": [
     {
-      "username": "Lucas",
+      "username": "Lucas23",
       "password": "Lucas123",
+      "name": "Lucas",
+      "lastname": "Benedetti",
       "email": "lbenedetti2306@gmail.com",
       "phone": "968184053",
-      "id": 1
+      "id": 1,
+      "shoppingCart": []
+    },
+    {
+      "username": "JohnC123",
+      "password": "Password1",
+      "name": "John",
+      "lastname": "Smith",
+      "email": "JhonSmith123@hotmail.com",
+      "phone": "985172123",
+      "id": 2
+    },
+    {
+      "username": "AldoxMar",
+      "password": "aldito",
+      "name": "Aldo",
+      "lastname": "Medina",
+      "email": "u202018286@upc.edu.pe",
+      "phone": "973049310",
+      "id": 3
+    },
+    {
+      "username": "123",
+      "password": "123",
+      "name": "123",
+      "lastname": "123",
+      "email": "123",
+      "phone": "123",
+      "id": 4
     }
   ],
   "trips": [
     {
-      "id": 1,
-      "origin": "Lisboa",
-      "destination": "Piura",
-      "date": "12/12/2022"
+      "origin": "New York",
+      "destination": "Lima",
+      "date": "2023-06-08T05:00:00.000Z",
+      "id": 1
     },
     {
-      "origin": "Washington D.C.",
-      "destination": "Lima",
+      "origin": "Lima",
+      "destination": "New York City",
+      "date": "2023-06-16T05:00:00.000Z",
       "id": 2
-    },
-    {
-      "origin": "Washington D.C.",
-      "destination": "Lima",
-      "id": 3
     }
-
   ],
   "products": [
     {
@@ -33,42 +58,112 @@
       "name": "Samsung S22",
       "price": "2999.99",
       "description": "Pantalla 6.8 Quad HD+ Amoled (120hz). Memoria interna 256GB. Memoria RAM 12GB. Cámara trasera cuadruple 108+12+10+10MP con IOS (estabilizacion optica). Cámara frontal 40MP",
-      "imageUrl": "https://realplaza.vtexassets.com/arquivos/ids/31152340-1200-auto?v=638060430332370000&width=1200&height=auto&aspect=true"
+      "imageUrl": "https://realplaza.vtexassets.com/arquivos/ids/31152340-1200-auto?v=638060430332370000&width=1200&height=auto&aspect=true",
+      "category": "Smartphones"
     },
     {
       "id": "2",
       "name": "Samsung S21 Ultra",
       "price": "2499.99",
       "description": "256GB de Memoria Interna. 12GB de RAM. Pantalla 6.8 pulgadas. Batería de 5000mAh. Cámara Trasera 108+10+10+12MPx. Cámara Frontal 40 mpx.",
-      "imageUrl": "https://realplaza.vtexassets.com/arquivos/ids/31036480-1200-auto?v=638048171142630000&width=1200&height=auto&aspect=true"
+      "imageUrl": "https://realplaza.vtexassets.com/arquivos/ids/31036480-1200-auto?v=638048171142630000&width=1200&height=auto&aspect=true",
+      "category": "Smartphones"
     },
     {
       "id": "3",
       "name": "Samsung Galaxy A73",
       "price": "1999.90",
       "description": "Pantalla Super AMOLED de 6.7 pulgadas con tasa de refresco de 120Hz y potenciado por un procesador Snapdragon 778G con 8 GB de RAM y 256GB de almacenamiento.",
-      "imageUrl": "https://realplaza.vtexassets.com/arquivos/ids/32237154-1200-auto?v=638140665691370000&width=1200&height=auto&aspect=true"
+      "imageUrl": "https://realplaza.vtexassets.com/arquivos/ids/32237154-1200-auto?v=638140665691370000&width=1200&height=auto&aspect=true",
+      "category": "Smartphones"
     },
     {
       "id": "4",
       "name": "iPhone 11 64GB ",
       "price": "2199.90",
       "description": "Un iPhone que buscará de nuevo convertirse en el más interesante para quienes busquen la experiencia de iOS a un precio de partida más asumible con su pantalla de 6,1 pulgadas",
-      "imageUrl": "https://realplaza.vtexassets.com/arquivos/ids/22772395-1200-auto?v=637860103115000000&width=1200&height=auto&aspect=true"
+      "imageUrl": "https://realplaza.vtexassets.com/arquivos/ids/22772395-1200-auto?v=637860103115000000&width=1200&height=auto&aspect=true",
+      "category": "Smartphones"
     },
     {
       "id": "5",
       "name": "Laptop Acer Aspire 15.6",
       "price": "1499.90",
       "description": "Laptop marca Acer Aspire de 15.6 pulgadas Intel Core i3 1005G1 con 8GB RAM DDR4 y 512GB SSD, esto agilizara tus tareas diarias y te permitirá almacenar todo lo que necesites.",
-      "imageUrl": "https://realplaza.vtexassets.com/arquivos/ids/31277110-1200-auto?v=638073295359770000&width=1200&height=auto&aspect=true"
+      "imageUrl": "https://realplaza.vtexassets.com/arquivos/ids/31277110-1200-auto?v=638073295359770000&width=1200&height=auto&aspect=true",
+      "category": "Laptops"
     },
     {
       "id": "6",
       "name": "Laptop Gamer Acer Nitro 5",
       "price": "2899.90",
       "description": "Laptop Gamer Acer Nitro 5 15.6\" Intel Core i5 11400H 8GB RAM 1TB HDD + 256GB SSD GTX 1650 4GB Video, esto agilizara tus trabajos y en los videojuegos te dará una experiencia única.",
-      "imageUrl": "https://realplaza.vtexassets.com/arquivos/ids/29913647-1200-auto?v=637957478142600000&width=1200&height=auto&aspect=true"
+      "imageUrl": "https://realplaza.vtexassets.com/arquivos/ids/29913647-1200-auto?v=637957478142600000&width=1200&height=auto&aspect=true",
+      "category": "Laptops"
+    },
+    {
+      "id": "7",
+      "name": "Samsung Galaxy S20",
+      "price": "1899.99",
+      "description": "Pantalla Dynamic AMOLED de 6.2 pulgadas. 128GB de almacenamiento. 12GB de RAM. Cámara trasera triple 12+12+64MP. Cámara frontal 10MP. Batería de 4000mAh.",
+      "imageUrl": "https://smartphonesperu.pe/wp-content/uploads/2020/03/SMARTHPONESPERU_0011_S20-CLOUD-1.jpg",
+      "category": "Smartphones"
+    },
+    {
+      "id": "8",
+      "name": "iPhone 12 Pro",
+      "price": "2799.99",
+      "description": "Pantalla Super Retina XDR de 6.1 pulgadas. 256GB de almacenamiento. 6GB de RAM. Cámara trasera triple 12+12+12MP. Cámara frontal 12MP. Batería de 2815mAh.",
+      "imageUrl": "https://cdn.shopify.com/s/files/1/0632/7880/9324/products/IMG-116168_823x.jpg?v=1660904616",
+      "category": "Smartphones"
+    },
+    {
+      "id": "9",
+      "name": "Dell XPS 15",
+      "price": "3499.90",
+      "description": "Laptop Dell XPS 15 con pantalla de 15.6 pulgadas. Procesador Intel Core i7 de décima generación. 16GB de RAM. 1TB SSD. Tarjeta gráfica NVIDIA GeForce GTX 1650 Ti.",
+      "imageUrl": "https://plazavea.vteximg.com.br/arquivos/ids/26021808-1000-1000/image-3fc0bb42af9c4a66930046f94aa24d0a.jpg",
+      "category": "Laptops"
+    },
+    {
+      "id": "10",
+      "name": "HP Pavilion 14",
+      "price": "1299.90",
+      "description": "Laptop HP Pavilion 14 con pantalla de 14 pulgadas. Procesador Intel Core i5 de décima generación. 8GB de RAM. 512GB SSD. Tarjeta gráfica integrada Intel UHD Graphics.",
+      "imageUrl": "https://d598hd2wips7r.cloudfront.net/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/6/Q/6QW26LA-1_T1679071267.png",
+      "category": "Laptops"
+    },
+    {
+      "id": "11",
+      "name": "PlayStation 5",
+      "price": "499.99",
+      "description": "Consola de videojuegos PlayStation 5 con capacidad de 825GB de almacenamiento SSD. Incluye un control DualSense y es compatible con juegos en 4K y ray tracing.",
+      "imageUrl": "https://plazavea.vteximg.com.br/arquivos/ids/733282-1000-1000/image-144b6e9d156245afb86e9dd13b340a1c.jpg",
+      "category": "Game Console"
+    },
+    {
+      "id": "12",
+      "name": "Xbox Series X",
+      "price": "499.99",
+      "description": "Consola de videojuegos Xbox Series X con capacidad de 1TB de almacenamiento SSD. Incluye un control Xbox Wireless y es compatible con juegos en 4K y ray tracing.",
+      "imageUrl": "https://plazavea.vteximg.com.br/arquivos/ids/25003764-1000-1000/null.jpg",
+      "category": "Game Console"
+    },
+    {
+      "id": "13",
+      "name": "AirPods Pro",
+      "price": "249.99",
+      "description": "Headphones inalámbricos Apple AirPods Pro con cancelación de ruido activa y resistencia al agua. Incluye estuche de carga inalámbrica.",
+      "imageUrl": "https://plazavea.vteximg.com.br/arquivos/ids/26180338-1000-1000/null.jpg",
+      "category": "Headphones"
+    },
+    {
+      "id": "14",
+      "name": "Sony WH-1000XM4",
+      "price": "349.99",
+      "description": "Headphones inalámbricos Sony WH-1000XM4 con cancelación de ruido activa y sonido de alta calidad. Ofrece hasta 30 horas de reproducción continua.",
+      "imageUrl": "https://plazavea.vteximg.com.br/arquivos/ids/22303312-1000-1000/imageUrl_2.jpg",
+      "category": "Headphones"
     }
   ]
 }

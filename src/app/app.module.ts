@@ -1,49 +1,58 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './components/user/login/login.component';
-import { NewTripComponent } from './components/user/trips/new-trip/new-trip.component';
-import { ViewTripsComponent } from "./components/user/trips/view-trips/view-trips.component";
-import { EditloginComponent } from './components/user/editlogin/editlogin.component';
-import {MatMenuModule} from '@angular/material/menu';
-// Import Shared/Material.Module.ts
-import { MaterialModule } from 'src/shared/material.module';
-import { DashboardComponent } from './components/user/dashboard/dashboard.component';
-import { FormsModule } from "@angular/forms";
-import { RegisterComponent } from './components/user/register/register.component';
-import { ToolbarComponent } from './components/user/toolbar/toolbar.component';
-// import { DialogComponent } from './dialogNotifications/dialog.component';
-import {MatDialogModule} from "@angular/material/dialog";
-import {MatSelectModule} from "@angular/material/select";
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {LoginComponent} from "./pages/login/login.component";
+
+import {FormsModule} from '@angular/forms';
+
+import {MaterialModule} from "./shared/material.module";
+
+import {HttpClientModule} from '@angular/common/http';
+import {UserService} from "./services/user/user.service";
+import {RegisterComponent} from './pages/register/register.component';
+import {NgOptimizedImage} from "@angular/common";
+import {DashboardComponent} from './pages/dashboard/dashboard.component';
+import {ToolbarComponent} from './components/toolbar/toolbar.component';
+import {ProfileComponent} from './pages/profile/profile.component';
+import {ProductComponent} from './components/product/product.component';
+import {CartComponent} from './components/cart/cart.component';
+import {FooterComponent} from './components/footer/footer.component';
+import { NewTripComponent } from './pages/new-trip/new-trip.component';
+import { ViewTripsComponent } from './pages/view-trips/view-trips.component';
+import { HomeComponent } from './pages/home/home.component';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent,
     RegisterComponent,
+    DashboardComponent,
     ToolbarComponent,
-    EditloginComponent,
+    ProfileComponent,
+    ProductComponent,
+    CartComponent,
+    FooterComponent,
     NewTripComponent,
-    ViewTripsComponent
+    ViewTripsComponent,
+    HomeComponent
   ],
   imports: [
-    MatMenuModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
     HttpClientModule,
     FormsModule,
-    MatDialogModule,
-    MatSelectModule
+    MaterialModule,
+    NgOptimizedImage
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

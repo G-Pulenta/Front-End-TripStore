@@ -1,0 +1,28 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <div class="left-content">
+      <div class="image-container">
+        <img alt="Login Logo TripStore" class="fade-in" height="60" ngSrc="../../../assets/images/logo-dashboard.svg"
+             priority width="180">
+      </div>
+    </div>
+    <div class="right-content">
+      <button mat-icon-button routerLink="/home">
+        <mat-icon>home</mat-icon>
+      </button>
+      <button (click)="openShoppingCartDialog()" mat-icon-button>
+        <mat-icon>shopping_cart</mat-icon>
+      </button>
+      <button mat-icon-button routerLink="/view-trips">
+        <mat-icon>airplanemode_active</mat-icon>
+      </button>
+      <button mat-stroked-button routerLink="/my-profile">
+        <mat-icon>account_circle</mat-icon>
+        {{ getUsernameFromLocalStorage() }}
+      </button>
+      <button (click)="logout()" mat-icon-button>
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

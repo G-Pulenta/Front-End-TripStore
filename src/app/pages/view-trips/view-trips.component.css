@@ -1,0 +1,24 @@
+.table-container{
+  max-width: 1000px;
+  margin: auto;
+  padding: 0.5rem;
+}
+
+mat-paginator {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.mat-snack-bar-container {
+  background-color: #ff0000;
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+  padding: 1rem;
+}
