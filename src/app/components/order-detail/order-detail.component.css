@@ -1,0 +1,22 @@
+.button-container {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+  padding: 1rem;
+}
+
+.total-price-title {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  align-content: center;
+  margin-top: 1em;
+  padding: 1rem;
+}
+
+.order-card {
+  margin: 0 auto;
+  max-width: 80%;
+}
