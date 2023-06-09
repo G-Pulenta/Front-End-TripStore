@@ -6,3 +6,7 @@
   margin: auto;
   padding: 1rem;
 }
+
+.button-container button {
+  margin: 0 0.5rem;
+}
