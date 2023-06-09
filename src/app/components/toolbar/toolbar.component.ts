@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
-import {CartComponent} from "../cart/cart.component";
+import {CartDialogComponent} from "../cart-dialog/cart-dialog.component";
 
 @Component({
   selector: 'app-toolbar',
@@ -18,7 +18,7 @@ export class ToolbarComponent {
   }
 
   openShoppingCartDialog() {
-    this.dialog.open(CartComponent, {
+    this.dialog.open(CartDialogComponent, {
       width: '800px',
       height: '500px'
     });
