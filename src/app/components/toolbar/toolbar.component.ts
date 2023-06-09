@@ -19,7 +19,7 @@ export class ToolbarComponent {
 
   openShoppingCartDialog() {
     this.dialog.open(CartComponent, {
-      width: '500px',
+      width: '800px',
       height: '500px'
     });
   }

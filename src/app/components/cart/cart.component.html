@@ -1,19 +1,30 @@
 <mat-table [dataSource]="shoppingCart">
 
   <!-- Definición de las columnas -->
+  <!-- Columna Producto -->
   <ng-container matColumnDef="name" class="width" >
-    <mat-header-cell *matHeaderCellDef>Nombre</mat-header-cell>
-    <mat-cell *matCellDef="let item">{{ item.name }}</mat-cell>
+    <mat-header-cell *matHeaderCellDef>Producto</mat-header-cell>
+    <mat-cell *matCellDef="let product"><strong> {{ product.name }} </strong></mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="price" class="width" >
-    <mat-header-cell *matHeaderCellDef>Precio</mat-header-cell>
-    <mat-cell *matCellDef="let item">{{ item.price }}</mat-cell>
+  <!-- Columna Precio -->
+  <ng-container matColumnDef="price">
+    <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
+    <mat-cell *matCellDef="let product">{{ product.price | currency: 'USD ' }}</mat-cell>
   </ng-container>
+
+  <!-- Columna Imagen -->
+  <ng-container matColumnDef="imageUrl">
+    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+    <mat-cell *matCellDef="let product">
+      <img [src]="product.imageUrl" alt="{{ product.name }}" class="header-image">
+    </mat-cell>
+  </ng-container>
+
 
   <!-- Columna para el botón de eliminar -->
   <ng-container matColumnDef="actions" class="width" >
-    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+    <mat-header-cell *matHeaderCellDef>Opciones</mat-header-cell>
     <mat-cell *matCellDef="let item">
       <button mat-icon-button color="warn" (click)="removeFromCart(item)">
         <mat-icon>delete</mat-icon>
@@ -21,8 +32,8 @@
     </mat-cell>
   </ng-container>
 
-  <mat-header-row *matHeaderRowDef="[ 'name', 'price', 'actions' ]"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: [ 'name', 'price', 'actions']"></mat-row>
+  <mat-header-row *matHeaderRowDef="[ 'imageUrl', 'name', 'price', 'actions' ]"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: [ 'imageUrl', 'name', 'price', 'actions' ]"></mat-row>
 </mat-table>
 
 <button mat-raised-button color="warn" class="width" (click)="clearCart()">Eliminar carrito</button>
