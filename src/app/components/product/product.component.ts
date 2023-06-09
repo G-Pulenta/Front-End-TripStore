@@ -5,6 +5,7 @@ import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {Router} from '@angular/router';
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-product',
@@ -22,7 +23,12 @@ export class ProductComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private productService: ProductService, private userService: UserService, private router: Router) {
+  constructor(
+    private productService: ProductService,
+    private userService: UserService,
+    private router: Router,
+    private snackBar: MatSnackBar
+  ) {
     this.userId = localStorage.getItem('id') || '';
     console.log('userId:', this.userId)
   }
@@ -83,5 +89,8 @@ export class ProductComponent implements OnInit, AfterViewInit {
       });
     });
 
+    this.snackBar.open('Producto agregado al carrito de compras', 'Cerrar', {
+      duration: 3000
+    });
   }
 }
