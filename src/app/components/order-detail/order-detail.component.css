@@ -7,6 +7,10 @@
   padding: 1rem;
 }
 
+.button-container button {
+  margin: 0 10px;
+}
+
 .total-price-title {
   display: flex;
   justify-content: right;
@@ -16,7 +20,20 @@
   padding: 1rem;
 }
 
-.order-card {
+.order-steps-card {
   margin: 0 auto;
   max-width: 80%;
+}
+
+.shipping-detail-form {
+  outline: red dashed 1px;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.shipping-detail-form mat-form-field {
+  display: block;
 }

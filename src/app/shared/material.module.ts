@@ -21,6 +21,7 @@ import {MatBadgeModule} from "@angular/material/badge";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatStepperModule} from "@angular/material/stepper";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   imports: [
@@ -44,7 +45,8 @@ import {MatStepperModule} from "@angular/material/stepper";
     MatBadgeModule,
     MatDialogModule,
     MatMenuModule,
-    MatStepperModule
+    MatStepperModule,
+    MatSelectModule
   ]
 })
 export class MaterialModule {
