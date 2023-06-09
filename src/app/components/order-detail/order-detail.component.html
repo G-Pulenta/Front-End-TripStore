@@ -1,0 +1,62 @@
+<app-toolbar></app-toolbar>
+<mat-stepper #stepper class="order-stepper">
+  <mat-step label="Product details">
+    <div>
+      <mat-card class="order-steps-card">
+        <mat-card-header>
+          <mat-card-title>1. Product details</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <app-cart></app-cart>
+        </mat-card-content>
+        <mat-card-footer>
+          <div class="button-container">
+            <button mat-raised-button color="primary" matStepperNext>Next</button>
+          </div>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </mat-step>
+  <mat-step label="Shipping details">
+    <div>
+      <mat-card class="order-steps-card">
+        <mat-card-header>
+          <mat-card-title>2. Confirm the city and the delivery date</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="shipping-detail-form">
+            <form (submit)="onSubmit()" #orderForm='ngForm'>
+              <!-- Origin input -->
+              <mat-form-field appearance="outline">
+                <mat-label>Origin</mat-label>
+                <input matInput id="origin" #inputOrigin required name="origin">
+              </mat-form-field>
+
+              <!-- Destination input -->
+              <mat-form-field appearance="outline">
+                <mat-label>Destination</mat-label>
+                <input matInput id="destination" #inputDestination required name="destination">
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>How long are you willing to wait?</mat-label>
+                <!-- Waiting time dropbox -->
+                <mat-select required>
+                  <mat-option *ngFor="let waitingTime of waitingTimes" [value]="waitingTime">
+                    {{waitingTime.value}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </form>
+          </div>
+        </mat-card-content>
+        <mat-card-footer>
+          <div class="button-container">
+            <button mat-stroked-button color="primary" matStepperPrevious>Back</button>
+            <button mat-raised-button color="primary">Post Order</button>
+          </div>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </mat-step>
+</mat-stepper>

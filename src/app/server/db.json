@@ -26,7 +26,8 @@
       "lastname": "Medina",
       "email": "u202018286@upc.edu.pe",
       "phone": "973049310",
-      "id": 3
+      "id": 3,
+      "shoppingCart": []
     }
   ],
   "trips": [

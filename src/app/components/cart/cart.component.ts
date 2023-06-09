@@ -37,6 +37,10 @@ export class CartComponent implements OnInit {
     }
   }
 
+  checkout() {
+
+  }
+
   clearCart() {
     const userId = localStorage.getItem('id');
 
@@ -50,6 +54,14 @@ export class CartComponent implements OnInit {
         });
       });
     }
+  }
+
+  getTotalPrice() {
+    let total = 0;
+    this.shoppingCart.forEach((item: any) => {
+      total += parseFloat(item.price);
+    });
+    return total.toFixed(2);
   }
 }
 

@@ -23,9 +23,9 @@ import {FooterComponent} from './components/footer/footer.component';
 import { NewTripComponent } from './pages/new-trip/new-trip.component';
 import { ViewTripsComponent } from './pages/view-trips/view-trips.component';
 import { HomeComponent } from './pages/home/home.component';
-
-
-
+import { OrderDetailComponent } from './components/order-detail/order-detail.component';
+import { CartActionsComponent } from './components/cart-actions/cart-actions.component';
+import { CartDialogComponent } from './components/cart-dialog/cart-dialog.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,10 @@ import { HomeComponent } from './pages/home/home.component';
     FooterComponent,
     NewTripComponent,
     ViewTripsComponent,
-    HomeComponent
+    HomeComponent,
+    OrderDetailComponent,
+    CartActionsComponent,
+    CartDialogComponent
   ],
   imports: [
     BrowserModule,
