@@ -1,25 +1,51 @@
 <mat-toolbar>
   <mat-toolbar-row>
+    <!-- Toolbar left content -->
     <div class="left-content">
       <div class="image-container">
         <img alt="Login Logo TripStore" class="fade-in" height="60" ngSrc="../../../assets/images/logo-dashboard.svg"
              priority width="180">
       </div>
     </div>
+
+    <!-- Toolbar center content -->
     <div class="center-content">
       <button mat-button routerLink="/new-trip">Travel</button>
       <button mat-button routerLink="/dashboard">Buy</button>
     </div>
+
+    <!-- Toolbar right content -->
     <div class="right-content">
+
+      <!-- Menu button -->
       <button mat-icon-button routerLink="/home">
         <mat-icon>home</mat-icon>
       </button>
+
+      <!-- Shopping cart button -->
       <button (click)="openShoppingCartDialog()" mat-icon-button>
         <mat-icon>shopping_cart</mat-icon>
       </button>
+
+      <!-- View trips button -->
       <button mat-icon-button routerLink="/view-trips">
         <mat-icon>airplanemode_active</mat-icon>
       </button>
+
+      <!-- Notifications button -->
+      <button mat-icon-button [matMenuTriggerFor]="notifications">
+        <mat-icon>notifications</mat-icon>
+        <mat-menu #notifications="matMenu">
+          <div class="menu-item2">Notificaciones</div>
+          <div class="menu-item2">Esta semana:</div><br>
+
+          <div class="menu-item">&#x2714; Tu registro de usuario fue exitoso!</div><br>
+          <div class="menu-item">&#x2714; Luis Maco quiere comunicarse contigo &#x2764;</div><br>
+          <div class="menu-item">&#x2714; ¡Nuevas ofertas en productos seleccionados! </div><br>
+        </mat-menu>
+      </button>
+
+      <!-- User menu button -->
       <button mat-stroked-button [matMenuTriggerFor]="menu">
         <mat-icon>account_circle</mat-icon>
         {{ getUsernameFromLocalStorage() }}
