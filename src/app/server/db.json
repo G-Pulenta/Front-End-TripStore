@@ -27,32 +27,7 @@
       "email": "u202018286@upc.edu.pe",
       "phone": "973049310",
       "id": 3,
-      "shoppingCart": [
-        {
-          "id": "1",
-          "name": "Samsung S22",
-          "price": "2999.99",
-          "description": "Pantalla 6.8 Quad HD+ Amoled (120hz). Memoria interna 256GB. Memoria RAM 12GB. Cámara trasera cuadruple 108+12+10+10MP con IOS (estabilizacion optica). Cámara frontal 40MP",
-          "imageUrl": "https://realplaza.vtexassets.com/arquivos/ids/31152340-1200-auto?v=638060430332370000&width=1200&height=auto&aspect=true",
-          "category": "Smartphones"
-        },
-        {
-          "id": "2",
-          "name": "Samsung S21 Ultra",
-          "price": "2499.99",
-          "description": "256GB de Memoria Interna. 12GB de RAM. Pantalla 6.8 pulgadas. Batería de 5000mAh. Cámara Trasera 108+10+10+12MPx. Cámara Frontal 40 mpx.",
-          "imageUrl": "https://realplaza.vtexassets.com/arquivos/ids/31036480-1200-auto?v=638048171142630000&width=1200&height=auto&aspect=true",
-          "category": "Smartphones"
-        },
-        {
-          "id": "13",
-          "name": "AirPods Pro",
-          "price": "249.99",
-          "description": "Headphones inalámbricos Apple AirPods Pro con cancelación de ruido activa y resistencia al agua. Incluye estuche de carga inalámbrica.",
-          "imageUrl": "https://plazavea.vteximg.com.br/arquivos/ids/26180338-1000-1000/null.jpg",
-          "category": "Headphones"
-        }
-      ]
+      "shoppingCart": []
     }
   ],
   "trips": [

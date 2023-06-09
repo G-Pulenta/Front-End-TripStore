@@ -37,6 +37,10 @@ export class CartComponent implements OnInit {
     }
   }
 
+  checkout() {
+
+  }
+
   clearCart() {
     const userId = localStorage.getItem('id');
 

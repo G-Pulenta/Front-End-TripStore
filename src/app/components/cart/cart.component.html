@@ -1,40 +1,42 @@
-<mat-table [dataSource]="shoppingCart">
+<div class="cart-table-container">
+  <mat-table [dataSource]="shoppingCart">
+    <!-- Product Column -->
+    <ng-container matColumnDef="name" class="width" >
+      <mat-header-cell *matHeaderCellDef>Product</mat-header-cell>
+      <mat-cell *matCellDef="let product"><strong> {{ product.name }} </strong></mat-cell>
+    </ng-container>
 
-  <!-- Definición de las columnas -->
-  <!-- Columna Producto -->
-  <ng-container matColumnDef="name" class="width" >
-    <mat-header-cell *matHeaderCellDef>Producto</mat-header-cell>
-    <mat-cell *matCellDef="let product"><strong> {{ product.name }} </strong></mat-cell>
-  </ng-container>
+    <!-- Price Column -->
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
+      <mat-cell *matCellDef="let product">{{ product.price | currency: 'USD ' }}</mat-cell>
+    </ng-container>
 
-  <!-- Columna Precio -->
-  <ng-container matColumnDef="price">
-    <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
-    <mat-cell *matCellDef="let product">{{ product.price | currency: 'USD ' }}</mat-cell>
-  </ng-container>
+    <!-- Image Column -->
+    <ng-container matColumnDef="imageUrl">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let product">
+        <img [src]="product.imageUrl" alt="{{ product.name }}" class="header-image">
+      </mat-cell>
+    </ng-container>
 
-  <!-- Columna Imagen -->
-  <ng-container matColumnDef="imageUrl">
-    <mat-header-cell *matHeaderCellDef></mat-header-cell>
-    <mat-cell *matCellDef="let product">
-      <img [src]="product.imageUrl" alt="{{ product.name }}" class="header-image">
-    </mat-cell>
-  </ng-container>
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions" class="width" >
+      <mat-header-cell *matHeaderCellDef>Options</mat-header-cell>
+      <mat-cell *matCellDef="let item">
+        <button mat-icon-button color="warn" (click)="removeFromCart(item)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
 
+    <mat-header-row *matHeaderRowDef="[ 'imageUrl', 'name', 'price', 'actions' ]"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: [ 'imageUrl', 'name', 'price', 'actions' ]"></mat-row>
+  </mat-table>
+</div>
 
-  <!-- Columna para el botón de eliminar -->
-  <ng-container matColumnDef="actions" class="width" >
-    <mat-header-cell *matHeaderCellDef>Opciones</mat-header-cell>
-    <mat-cell *matCellDef="let item">
-      <button mat-icon-button color="warn" (click)="removeFromCart(item)">
-        <mat-icon>delete</mat-icon>
-      </button>
-    </mat-cell>
-  </ng-container>
-
-  <mat-header-row *matHeaderRowDef="[ 'imageUrl', 'name', 'price', 'actions' ]"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: [ 'imageUrl', 'name', 'price', 'actions' ]"></mat-row>
-</mat-table>
-
-<button mat-raised-button color="warn" class="width" (click)="clearCart()">Eliminar carrito</button>
+<div class="button-container">
+  <button mat-flat-button color="primary" (click)="checkout()">Order</button>
+  <button mat-stroked-button color="warn" (click)="clearCart()">Clear Cart</button>
+</div>
 

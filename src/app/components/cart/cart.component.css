@@ -3,11 +3,20 @@
   margin-top: 10px;
 }
 
-button {
-  border-radius: 0;
-}
-
 .header-image {
   width: 100px;
   height: auto;
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+  padding: 1rem;
+}
+
+.button-container button {
+  margin: 0 1rem;
 }
