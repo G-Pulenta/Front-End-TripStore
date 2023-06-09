@@ -1,5 +1,5 @@
 <app-toolbar></app-toolbar>
-<mat-stepper #stepper>
+<mat-stepper #stepper class="order-stepper">
   <mat-step label="Product details">
     <div>
       <mat-card class="order-steps-card">
@@ -53,17 +53,10 @@
         <mat-card-footer>
           <div class="button-container">
             <button mat-stroked-button color="primary" matStepperPrevious>Back</button>
-            <button mat-raised-button color="primary" matStepperNext>Next</button>
+            <button mat-raised-button color="primary">Post Order</button>
           </div>
         </mat-card-footer>
       </mat-card>
-    </div>
-  </mat-step>
-  <mat-step label="Step 3">
-    Step 3 Content
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
     </div>
   </mat-step>
 </mat-stepper>
