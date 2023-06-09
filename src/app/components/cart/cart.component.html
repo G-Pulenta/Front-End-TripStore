@@ -34,3 +34,7 @@
     <mat-row *matRowDef="let row; columns: [ 'imageUrl', 'name', 'price', 'actions' ]"></mat-row>
   </mat-table>
 </div>
+<mat-divider class="total-price-divider"></mat-divider>
+<div class="total-price-container">
+  <h2><strong>Total price: </strong> {{ getTotalPrice() | currency: 'USD '}}</h2>
+</div>

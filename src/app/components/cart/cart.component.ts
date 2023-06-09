@@ -55,5 +55,13 @@ export class CartComponent implements OnInit {
       });
     }
   }
+
+  getTotalPrice() {
+    let total = 0;
+    this.shoppingCart.forEach((item: any) => {
+      total += parseFloat(item.price);
+    });
+    return total.toFixed(2);
+  }
 }
 
