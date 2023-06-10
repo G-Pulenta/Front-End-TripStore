@@ -23,7 +23,6 @@ const routes: Routes = [
   {path: 'view-trips', component: ViewTripsComponent, canActivate: [AuthService]},
   {path: 'order', component: OrderDetailComponent, canActivate: [AuthService]}
 
-
 ];
 
 @NgModule({

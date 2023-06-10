@@ -28,6 +28,42 @@
       "phone": "973049310",
       "id": 3,
       "shoppingCart": []
+    },
+    {
+      "username": "Pierina23",
+      "password": "password123",
+      "name": "Pierina",
+      "lastname": "Guerrero",
+      "email": "pierig23@gmail.com",
+      "phone": "968184053",
+      "id": 4
+    },
+    {
+      "username": "pieri2306",
+      "password": "password1",
+      "name": "Pierina",
+      "lastname": "Guerrero",
+      "email": "pier@gmail.com",
+      "phone": "958426484",
+      "id": 5,
+      "shoppingCart": [
+        {
+          "id": "2",
+          "name": "Samsung S21 Ultra",
+          "price": "2499.99",
+          "description": "256GB de Memoria Interna. 12GB de RAM. Pantalla 6.8 pulgadas. Batería de 5000mAh. Cámara Trasera 108+10+10+12MPx. Cámara Frontal 40 mpx.",
+          "imageUrl": "https://realplaza.vtexassets.com/arquivos/ids/31036480-1200-auto?v=638048171142630000&width=1200&height=auto&aspect=true",
+          "category": "Smartphones"
+        },
+        {
+          "id": "1",
+          "name": "Samsung S22",
+          "price": "2999.99",
+          "description": "Pantalla 6.8 Quad HD+ Amoled (120hz). Memoria interna 256GB. Memoria RAM 12GB. Cámara trasera cuadruple 108+12+10+10MP con IOS (estabilizacion optica). Cámara frontal 40MP",
+          "imageUrl": "https://realplaza.vtexassets.com/arquivos/ids/31152340-1200-auto?v=638060430332370000&width=1200&height=auto&aspect=true",
+          "category": "Smartphones"
+        }
+      ]
     }
   ],
   "trips": [
@@ -42,6 +78,12 @@
       "destination": "New York City",
       "date": "2023-06-16T05:00:00.000Z",
       "id": 2
+    },
+    {
+      "origin": "Miami",
+      "destination": "Lima",
+      "date": "2023-06-21T05:00:00.000Z",
+      "id": 3
     }
   ],
   "products": [
