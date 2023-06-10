@@ -1,0 +1,22 @@
+.new-trip-form {
+  display: flex;
+  max-width: 400px;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.new-trip-form mat-form-field {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.new-trip-form .form-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-actions button {
+  margin: 0 10px;
+}

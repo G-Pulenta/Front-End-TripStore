@@ -1,0 +1,19 @@
+.home-p {
+  display: grid;
+  place-items: center;
+  /*padding: 10rem;*/
+  margin: 10rem auto;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.home-p h1 {
+  font-size: 1.5em;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.client-type-buttons button {
+  margin: 10px 50px;
+  scale: 1.3;
+}

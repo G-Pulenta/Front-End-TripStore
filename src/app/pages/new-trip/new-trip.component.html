@@ -1,0 +1,33 @@
+<app-toolbar></app-toolbar>
+<div class="new-trip-form">
+  <form (submit)="onSubmit()" #tripForm='ngForm'>
+    <!-- Origin input -->
+    <label for="origin">Origin</label>
+    <mat-form-field appearance="outline">
+      <input matInput id="origin" #input_origin name="origin" placeholder="i.e. New York City, United States" required [(ngModel)]="tripData.origin">
+    </mat-form-field>
+
+    <!-- Destination input -->
+    <label for="destination">Destination</label>
+    <mat-form-field appearance="outline">
+      <input matInput id="destination" #input_destination name="destination" placeholder="i.e. Lima, Peru" required [(ngModel)]="tripData.destination">
+    </mat-form-field>
+
+    <!-- Departure date input -->
+    <label for="date">Departure date</label>
+    <mat-form-field appearance="outline">
+      <input matInput [matDatepicker]="picker" id="date" #input_departure_date name="departure_date" placeholder="i.e. 2018-12-31" required [(ngModel)]="tripData.date">
+      <mat-hint>Choose a date</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker startView="month"></mat-datepicker>
+    </mat-form-field>
+
+    <!-- Form actions -->
+    <div class="form-actions">
+      <ng-container>
+        <button mat-raised-button color="accent" class="add-trip-button" (click)="addTrip()" [disabled]="!tripForm.form.valid" routerLink="/view-trips">Add trip</button>
+        <button mat-stroked-button color="warn" class="cancel-submit-button" (click)="cancelEdit()" routerLink="/view-trips">Cancel</button>
+      </ng-container>
+    </div>
+  </form>
+</div>

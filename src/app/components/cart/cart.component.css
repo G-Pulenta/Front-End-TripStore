@@ -1,0 +1,40 @@
+.cart-table-container {
+  margin: auto;
+  padding: 1rem;
+}
+
+.width {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.header-image {
+  width: 100px;
+  height: auto;
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+  padding: 1rem;
+}
+
+.button-container button {
+  margin: 0 1rem;
+}
+
+.total-price-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: auto;
+  padding: 1rem;
+}
+
+.total-price-divider {
+  border-top: 2px solid #000;
+}

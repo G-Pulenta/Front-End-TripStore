@@ -1,0 +1,58 @@
+<mat-drawer-container>
+  <mat-drawer mode="side" opened style="width: 200px; text-align: center;">
+    <mat-nav-list>
+      <a (click)="filterByCategory(category)" *ngFor="let category of categories" mat-list-item>
+        {{ category }}
+      </a>
+    </mat-nav-list>
+    <button (click)="resetFilter()" color="primary" mat-button>Show All</button>
+  </mat-drawer>
+  <mat-drawer-content>
+    <mat-form-field class="centered-input">
+      <mat-label>Filter by Product Name</mat-label>
+      <input (keyup)="applyFilter($event)" matInput placeholder="Search">
+    </mat-form-field>
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8 product-table" matSort>
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef>Product Name</mat-header-cell>
+        <mat-cell *matCellDef="let product"><h3>{{ product.name }}</h3></mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="imageUrl">
+        <mat-header-cell *matHeaderCellDef>Image</mat-header-cell>
+        <mat-cell *matCellDef="let product">
+          <img [src]="product.imageUrl" alt="{{ product.name }}" class="header-image">
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+        <mat-cell *matCellDef="let product">{{ product.description }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Price</mat-header-cell>
+        <mat-cell *matCellDef="let product"><h2><strong>{{ product.price | currency: 'USD ' }}</strong></h2></mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+        <mat-cell *matCellDef="let product">
+          <button (click)="addToCart(product)" aria-label="Buy" color="primary" mat-icon-button class="action-button">
+            <mat-icon>shopping_cart</mat-icon>
+          </button>
+          <button aria-label="Share" color="primary" mat-icon-button class="action-button">
+            <mat-icon>share</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
+

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Front-End-TripStore": {
+    "open-source": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Front-End-TripStore",
+            "outputPath": "dist/open-source",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -28,7 +28,9 @@
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/lottie-web/build/player/lottie.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -67,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Front-End-TripStore:build:production"
+              "browserTarget": "open-source:build:production"
             },
             "development": {
-              "browserTarget": "Front-End-TripStore:build:development"
+              "browserTarget": "open-source:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Front-End-TripStore:build"
+            "browserTarget": "open-source:build"
           }
         },
         "test": {
@@ -97,7 +99,9 @@
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/lottie-web/build/player/lottie.min.js"
+            ]
           }
         }
       }

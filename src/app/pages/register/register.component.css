@@ -1,0 +1,21 @@
+.register {
+  width: 100%;
+  max-width: 350px;
+  padding: 25px;
+  border-radius: 25px;
+  text-align: center;
+  background: rgba(190, 190, 190, 0.16);
+}
+
+.width {
+  width: 100%;
+  margin-top: 10px;
+}
+
+button {
+  border-radius: 25px;
+}
+
+.already-account {
+  margin-top: 10px;
+}
