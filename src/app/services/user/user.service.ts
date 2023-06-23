@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environment/environment";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,8 @@ export class UserService {
     return this.http.post(`${this.apiUrl}/users`, user);
   }
 
-  loginUser(username: string, password: string) {
-    return this.http.get(`${this.apiUrl}/users?username=${username}&password=${password}`);
+  login(credentials: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/user/authenticate`, credentials);
   }
 
   getUser(userId: string) {

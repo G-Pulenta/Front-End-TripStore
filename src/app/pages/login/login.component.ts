@@ -27,14 +27,18 @@ export class LoginComponent implements AfterViewInit{
       horizontalPosition: 'center',
       verticalPosition: 'top',
     };
-    this.userService.loginUser(this.username, this.password).subscribe(
+
+    const credentials = {
+      username: this.username,
+      password: this.password
+    };
+    this.userService.login(credentials).subscribe(
       (response: any) => {
-        if (response.length > 0) {
+        if (response) {
           console.log('User validated');
           localStorage.setItem('username', this.username);
-          localStorage.setItem('id', response[0].id);
-
-          this.router.navigate(['home']).then(r => HomeComponent);
+          localStorage.setItem('id', response.id);
+          this.router.navigate(['home']);
         } else {
           this.snackBar.open('Invalid username or password.', 'Close', snackBarConfig);
           console.log('User not validated');
@@ -43,7 +47,15 @@ export class LoginComponent implements AfterViewInit{
         this.password = '';
       },
       (error: any) => {
-        console.error('Error en la petición HTTP:', error);
+        if (error.status === 401) {
+          this.snackBar.open('Invalid username or password.', 'Close', {
+            duration: 3000,
+            horizontalPosition: 'center',
+            verticalPosition: 'top'
+          });
+        } else {
+          console.error('Error en la petición HTTP:', error);
+        }
       }
     );
   }
