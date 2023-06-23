@@ -47,14 +47,33 @@ export class NewTripComponent {
   }
 
   addTrip() {
-    this.tripDataService.createItem(this.tripData).subscribe((response: any) => {
-      this.dataSource.data.push({...response});
-      this.dataSource.data = this.dataSource.data.map((o: any) => {return o});
-    })
+    // Obtén el ID del usuario del almacenamiento local
+    const userId = localStorage.getItem('id');
 
-    this.snackBar.open('Trip added successfully', 'Close', {
-      duration: 3500
-    });
+    // Verifica si se ha obtenido el ID del usuario
+    if (userId) {
+      // Agrega el ID del usuario al objeto de viaje
+      this.tripData.user = {
+        id: userId
+      };
+
+      // Realiza la solicitud POST al servicio de datos de viaje
+      this.tripDataService.createItem(this.tripData).subscribe(
+        (response: any) => {
+          this.dataSource.data.push({...response});
+          this.dataSource.data = this.dataSource.data.map((o: any) => o);
+        },
+        (error: any) => {
+          console.error('Error en la petición HTTP:', error);
+        }
+      );
+
+      this.snackBar.open('Trip added successfully', 'Close', {
+        duration: 3500
+      });
+    } else {
+      console.error('User ID not found in localStorage');
+    }
   }
 
   updateTrip() {

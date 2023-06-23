@@ -1,4 +1,4 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {TripModel} from "../../models/trip.model";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
@@ -12,7 +12,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
   templateUrl: './view-trips.component.html',
   styleUrls: ['./view-trips.component.css']
 })
-export class ViewTripsComponent {
+export class ViewTripsComponent implements OnInit{
   tripData!: TripModel;
   dataSource = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'origin', 'destination', 'date']
