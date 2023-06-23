@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {TripModel} from "../../models/trip.model";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
@@ -12,7 +12,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
   templateUrl: './view-trips.component.html',
   styleUrls: ['./view-trips.component.css']
 })
-export class ViewTripsComponent implements OnInit{
+export class ViewTripsComponent implements OnInit, AfterViewInit{
   tripData!: TripModel;
   dataSource = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'origin', 'destination', 'date']
@@ -35,9 +35,17 @@ export class ViewTripsComponent implements OnInit{
     this.getAllTrips();
   }
 
+  ngAfterViewInit(): void {
+    this.dataSource.sort = this.sort;
+  }
+
   getAllTrips(): void {
-    this.tripDataService.getItemList().subscribe((response: any) => {
-      this.dataSource.data = response;
-    })
+    this.tripDataService.getItemList().subscribe((response: TripModel | TripModel[]) => {
+      const userIdString = localStorage.getItem('id');
+      const userId = userIdString !== null ? +userIdString : 0;
+      const trips = Array.isArray(response) ? response : [response]; // Envolver el objeto en un array si es necesario
+      const filteredTrips = trips.filter(trip => trip.user.id === userId);
+      this.dataSource.data = filteredTrips;
+    });
   }
 }
