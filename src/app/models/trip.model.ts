@@ -4,6 +4,6 @@ export interface TripModel {
   destination: any;
   date: any
   user: {
-    id: string;
+    id: any;
   };
 }
