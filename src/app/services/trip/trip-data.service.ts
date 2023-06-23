@@ -7,7 +7,7 @@ import {TripModel} from "../../models/trip.model";
   providedIn: 'root'
 })
 export class TripDataService {
-  baseURL = "http://localhost:3000/trips";
+  baseURL = "https://back-end-tripstore-production.up.railway.app/api/v1/trips";
 
   constructor(private http: HttpClient) { }
 
