@@ -17,7 +17,8 @@ export class ProductComponent implements OnInit, AfterViewInit {
   products: any[] = [];
   categories: string[] = [];
   shoppingCart: any[] = [];
-  displayedColumns: string[] = ['name', 'imageUrl', 'description', 'price', 'actions'];
+  // displayedColumns: string[] = ['name', 'imageUrl', 'description', 'price', 'actions'];
+  displayedColumns: string[] = ['productName', 'productImage', 'productDescription', 'productPrice', 'productRating', 'actions'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatSort) sort!: MatSort;
