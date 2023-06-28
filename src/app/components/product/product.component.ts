@@ -6,6 +6,8 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import {Router} from '@angular/router';
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
+import {map, Observable} from "rxjs";
 
 @Component({
   selector: 'app-product',
@@ -22,12 +24,13 @@ export class ProductComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-
+  isSmallScreen$: Observable<boolean> | undefined;
   constructor(
     private productService: ProductService,
     private userService: UserService,
     private router: Router,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private breakpointObserver: BreakpointObserver
   ) {
     this.userId = localStorage.getItem('id') || '';
     console.log('userId:', this.userId)
@@ -42,6 +45,9 @@ export class ProductComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.loadProducts();
+    this.isSmallScreen$ = this.breakpointObserver.observe([Breakpoints.Small, Breakpoints.HandsetPortrait]).pipe(
+      map((result) => result.matches)
+    );
   }
 
   loadProducts() {
