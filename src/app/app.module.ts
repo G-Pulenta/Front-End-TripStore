@@ -26,6 +26,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { OrderDetailComponent } from './components/order-detail/order-detail.component';
 import { CartActionsComponent } from './components/cart-actions/cart-actions.component';
 import { CartDialogComponent } from './components/cart-dialog/cart-dialog.component';
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -43,7 +44,9 @@ import { CartDialogComponent } from './components/cart-dialog/cart-dialog.compon
     HomeComponent,
     OrderDetailComponent,
     CartActionsComponent,
-    CartDialogComponent
+    CartDialogComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ import { CartDialogComponent } from './components/cart-dialog/cart-dialog.compon
     HttpClientModule,
     FormsModule,
     MaterialModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    FlexLayoutModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

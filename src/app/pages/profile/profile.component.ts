@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, Renderer2, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {UserService} from "../../services/user/user.service";
 import {Router} from "@angular/router";
 import lottie from "lottie-web";
@@ -9,13 +9,21 @@ import {MatSnackBar, MatSnackBarConfig} from "@angular/material/snack-bar";
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements AfterViewInit {
+export class ProfileComponent implements AfterViewInit, OnInit {
   user: any = {};
   @ViewChild('lottieContainer') lottieContainer!: ElementRef;
 
   constructor(private userService: UserService, private renderer: Renderer2, private router: Router, private snackBar: MatSnackBar) {
   }
+  isSmallScreen = false;
 
+  ngOnInit() {
+    this.checkScreenSize();
+  }
+  @HostListener('window:resize', ['$event'])
+  checkScreenSize() {
+    this.isSmallScreen = window.innerWidth < 800;
+  }
   ngAfterViewInit(): void {
     this.loadAnimation();
     this.getUserData();

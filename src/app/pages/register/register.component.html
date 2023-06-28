@@ -1,11 +1,11 @@
-<mat-grid-list cols="2" rowHeight="1:1">
+<mat-grid-list [cols]="isSmallScreen ? 1 : 2" rowHeight="100vh">
   <mat-grid-tile>
     <div #lottieContainer id="lottie-container"></div>
   </mat-grid-tile>
   <mat-grid-tile>
     <div class="body">
       <form #userForm="ngForm" (ngSubmit)="register()" class="register">
-        <img alt="Register Logo TripStore" height="125" height="100" ngSrc="../../../assets/images/logo-register.svg"
+        <img alt="Register Logo TripStore" height="125" ngSrc="../../../assets/images/logo-register.svg"
              priority width="300">
         <mat-form-field class="width">
           <mat-label>Username</mat-label>

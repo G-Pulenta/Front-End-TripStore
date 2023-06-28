@@ -1,5 +1,5 @@
 <app-toolbar></app-toolbar>
-<mat-grid-list cols="2" rowHeight="1:1">
+<mat-grid-list [cols]="isSmallScreen ? 1 : 2" rowHeight="100vh">
   <mat-grid-tile>
     <div #lottieContainer id="lottie-container"></div>
   </mat-grid-tile>
@@ -40,4 +40,6 @@
   </mat-grid-tile>
 </mat-grid-list>
 <app-footer></app-footer>
+
+
 
