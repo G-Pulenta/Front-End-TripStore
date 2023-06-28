@@ -1,18 +1,23 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {CartDialogComponent} from "../cart-dialog/cart-dialog.component";
-
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.css']
 })
-export class ToolbarComponent {
-
-  constructor(private router: Router, private dialog: MatDialog) {
+export class ToolbarComponent implements OnInit{
+  isSmallScreen: boolean = false;
+  constructor(private router: Router, private dialog: MatDialog, private breakpointObserver: BreakpointObserver) {
   }
-
+  ngOnInit() {
+    this.breakpointObserver.observe([Breakpoints.Small, Breakpoints.HandsetPortrait])
+      .subscribe(result => {
+        this.isSmallScreen = result.matches;
+      });
+  }
   getUsernameFromLocalStorage(): string | null {
     return localStorage.getItem('username');
   }

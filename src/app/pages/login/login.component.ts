@@ -1,25 +1,33 @@
-import {AfterViewInit, Component, ElementRef, Renderer2, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild} from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { UserService } from "../../services/user/user.service";
 import lottie from 'lottie-web';
-import {HomeComponent} from "../home/home.component";
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements AfterViewInit{
+export class LoginComponent implements AfterViewInit, OnInit{
   username: string = '';
   password: string = '';
 
   hide = true;
+  isSmallScreen = false;
 
   @ViewChild('lottieContainer') lottieContainer!: ElementRef;
 
   constructor(private userService: UserService, private router: Router, private snackBar: MatSnackBar, private renderer: Renderer2) {}
 
+  ngOnInit() {
+    this.checkScreenSize();
+  }
+  @HostListener('window:resize', ['$event'])
+  checkScreenSize() {
+    this.isSmallScreen = window.innerWidth < 800;
+  }
   validateUser() {
 
     const snackBarConfig: MatSnackBarConfig = {
@@ -27,6 +35,7 @@ export class LoginComponent implements AfterViewInit{
       horizontalPosition: 'center',
       verticalPosition: 'top',
     };
+
 
     const credentials = {
       username: this.username,

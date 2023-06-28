@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, Renderer2, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild} from '@angular/core';
 import {UserService} from "../../services/user/user.service";
 import lottie from 'lottie-web';
 import {MatSnackBar} from "@angular/material/snack-bar";
@@ -9,10 +9,19 @@ import {Router} from "@angular/router";
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements AfterViewInit {
+export class RegisterComponent implements AfterViewInit, OnInit {
   user: any = {};
   @ViewChild('lottieContainer') lottieContainer!: ElementRef;
 
+  isSmallScreen = false;
+
+  ngOnInit() {
+    this.checkScreenSize();
+  }
+  @HostListener('window:resize', ['$event'])
+  checkScreenSize() {
+    this.isSmallScreen = window.innerWidth < 800;
+  }
   constructor(
     private userService: UserService,
     private renderer: Renderer2,

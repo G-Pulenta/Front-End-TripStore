@@ -9,13 +9,13 @@
     </div>
 
     <!-- Toolbar center content -->
-    <div class="center-content">
+    <div class="center-content" *ngIf="!isSmallScreen">
       <button mat-button routerLink="/new-trip">Travel</button>
       <button mat-button routerLink="/dashboard">Buy</button>
     </div>
 
     <!-- Toolbar right content -->
-    <div class="right-content">
+    <div class="right-content" *ngIf="!isSmallScreen">
 
       <!-- Menu button -->
       <button mat-icon-button routerLink="/home">
@@ -61,5 +61,54 @@
         </mat-menu>
       </button>
     </div>
+    <!-- Dropdown button for small screens -->
+    <button *ngIf="isSmallScreen" mat-icon-button [matMenuTriggerFor]="dropdownMenu" >
+    <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #dropdownMenu="matMenu">
+      <button mat-menu-item routerLink="/new-trip">Travel</button>
+      <button mat-menu-item routerLink="/dashboard">Buy</button>
+      <button mat-menu-item routerLink="/home">
+        <mat-icon>home</mat-icon>
+        Home
+      </button>
+      <button mat-menu-item (click)="openShoppingCartDialog()">
+        <mat-icon>shopping_cart</mat-icon>
+        Shopping Cart
+      </button>
+      <button mat-menu-item routerLink="/view-trips">
+        <mat-icon>airplanemode_active</mat-icon>
+        View Trips
+      </button>
+      <button mat-menu-item [matMenuTriggerFor]="notifications">
+        <mat-icon>notifications</mat-icon>
+        Notifications
+        <mat-menu #notifications="matMenu">
+          <div class="menu-item2">Notificaciones</div>
+          <div class="menu-item2">Esta semana:</div><br>
+
+          <div class="menu-item">&#x2714; Tu registro de usuario fue exitoso!</div><br>
+          <div class="menu-item">&#x2714; Luis Maco quiere comunicarse contigo &#x2764;</div><br>
+          <div class="menu-item">&#x2714; ¡Nuevas ofertas en productos seleccionados! </div><br>
+        </mat-menu>
+      </button>
+
+      <!-- User menu button -->
+      <button mat-menu-item [matMenuTriggerFor]="menu" >
+        <mat-icon>account_circle</mat-icon>
+        {{ getUsernameFromLocalStorage() }}
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/my-profile" class="menu-button">
+            <mat-icon>account_circle</mat-icon>
+            <span>My Profile</span>
+          </button>
+          <button mat-menu-item (click)="logout()" class="menu-button">
+            <mat-icon>exit_to_app</mat-icon>
+            Logout
+          </button>
+        </mat-menu>
+      </button>
+    </mat-menu>
+
   </mat-toolbar-row>
 </mat-toolbar>
