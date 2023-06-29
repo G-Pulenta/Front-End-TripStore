@@ -60,14 +60,16 @@ export class ProductComponent implements OnInit, AfterViewInit {
           this.dataSource.paginator = this.paginator;
 
           // Extract unique categories from the products
-          this.categories = Array.from(new Set(this.products.map(product => product.category)));
+          this.categories = Array.from(new Set(this.products.map(product => product.productCategory)));
         },
         error => {
           console.error('Error al cargar los productos:', error);
         }
       );
   }
-
+  getRatingStars(rating: number): number[] {
+    return Array(rating).fill(0);
+  }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

@@ -24,7 +24,7 @@
       <ng-container matColumnDef="productImage">
         <mat-header-cell *matHeaderCellDef>Image</mat-header-cell>
         <mat-cell *matCellDef="let product">
-          <img [src]="product.productImage" alt="{{ product.name }}" class="header-image">
+          <img [src]="product.productImageUrl" alt="{{ product.productImageUrl }}" class="header-image">
         </mat-cell>
       </ng-container>
 
@@ -43,7 +43,9 @@
       <!-- Product Rating Column -->
       <ng-container matColumnDef="productRating">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Rating</mat-header-cell>
-        <mat-cell *matCellDef="let product"><h2><strong>{{ product.productRating }}</strong></h2></mat-cell>
+        <mat-cell *matCellDef="let product"><h2><strong>
+          <mat-icon *ngFor="let star of getRatingStars(product.productRating)">star</mat-icon>
+        </strong></h2></mat-cell>
       </ng-container>
 
       <!-- Product Actions Column -->
