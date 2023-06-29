@@ -13,28 +13,40 @@
       <input (keyup)="applyFilter($event)" matInput placeholder="Search">
     </mat-form-field>
     <mat-table [dataSource]="dataSource" class="mat-elevation-z8 product-table" matSort>
-      <ng-container matColumnDef="name">
+
+      <!-- Product Name Column -->
+      <ng-container matColumnDef="productName">
         <mat-header-cell *matHeaderCellDef>Product Name</mat-header-cell>
-        <mat-cell *matCellDef="let product"><h3>{{ product.name }}</h3></mat-cell>
+        <mat-cell *matCellDef="let product"><h3>{{ product.productName }}</h3></mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="imageUrl">
+      <!-- Product Image Column -->
+      <ng-container matColumnDef="productImage">
         <mat-header-cell *matHeaderCellDef>Image</mat-header-cell>
         <mat-cell *matCellDef="let product">
-          <img [src]="product.imageUrl" alt="{{ product.name }}" class="header-image">
+          <img [src]="product.productImage" alt="{{ product.name }}" class="header-image">
         </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="description">
+      <!-- Product Description Column -->
+      <ng-container matColumnDef="productDescription">
         <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
-        <mat-cell *matCellDef="let product">{{ product.description }}</mat-cell>
+        <mat-cell *matCellDef="let product">{{ product.productDescription }}</mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="price">
+      <!-- Product Price Column -->
+      <ng-container matColumnDef="productPrice">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Price</mat-header-cell>
-        <mat-cell *matCellDef="let product"><h2><strong>{{ product.price | currency: 'USD ' }}</strong></h2></mat-cell>
+        <mat-cell *matCellDef="let product"><h2><strong>{{ product.productPrice | currency: 'USD ' }}</strong></h2></mat-cell>
       </ng-container>
 
+      <!-- Product Rating Column -->
+      <ng-container matColumnDef="productRating">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Rating</mat-header-cell>
+        <mat-cell *matCellDef="let product"><h2><strong>{{ product.productRating }}</strong></h2></mat-cell>
+      </ng-container>
+
+      <!-- Product Actions Column -->
       <ng-container matColumnDef="actions">
         <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
         <mat-cell *matCellDef="let product">
