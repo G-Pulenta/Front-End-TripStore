@@ -71,6 +71,7 @@ export class NewTripComponent {
       this.snackBar.open('Trip added successfully', 'Close', {
         duration: 3500
       });
+      this.router.navigate(['/view-trips']);
     } else {
       console.error('User ID not found in localStorage');
     }
