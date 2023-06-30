@@ -1,3 +1,11 @@
+.toolbar{
+  background-image: url('../../../assets/images/toolbar-background.svg');
+  background-repeat: repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 10px;
+}
+
 .image-container {
   margin-top: 10px;
 }

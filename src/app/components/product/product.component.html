@@ -37,7 +37,7 @@
       <!-- Product Price Column -->
       <ng-container matColumnDef="productPrice">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Price</mat-header-cell>
-        <mat-cell *matCellDef="let product"><h2><strong>{{ product.productPrice | currency: 'USD ' }}</strong></h2></mat-cell>
+        <mat-cell *matCellDef="let product"><h2><strong>{{ product.productPrice | currency: 'S/. ' }}</strong></h2></mat-cell>
       </ng-container>
 
       <!-- Product Rating Column -->

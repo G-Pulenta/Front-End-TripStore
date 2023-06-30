@@ -33,21 +33,5 @@ export class CartActionsComponent {
     this.dialog.closeAll();
   }
 
-  clearCart() {
-    const userId = localStorage.getItem('id');
-    if (userId) {
-      this.userService.getUser(userId).subscribe((user: any) => {
-        const updatedUser = { ...user, shoppingCart: [] };
-        this.userService.updateUser(updatedUser).subscribe(() => {
-          this.shoppingCart = [];
-          console.log('User shopping cart cleared');
-        });
-      });
-      this.snackBar.open('Shopping cart cleared', 'Close', {
-        duration: 3000,
-      });
 
-      this.dialog.closeAll();
-    }
-  }
 }

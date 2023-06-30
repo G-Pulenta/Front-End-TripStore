@@ -3,20 +3,20 @@
     <!-- Product Column -->
     <ng-container matColumnDef="name" class="width" >
       <mat-header-cell *matHeaderCellDef>Product</mat-header-cell>
-      <mat-cell *matCellDef="let product"><strong> {{ product.name }} </strong></mat-cell>
+      <mat-cell *matCellDef="let item"><strong> {{ item.product.productName }} </strong></mat-cell>
     </ng-container>
 
     <!-- Price Column -->
     <ng-container matColumnDef="price">
       <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
-      <mat-cell *matCellDef="let product">{{ product.price | currency: 'USD ' }}</mat-cell>
+      <mat-cell *matCellDef="let item">{{ item.product.productPrice | currency: 'USD ' }}</mat-cell>
     </ng-container>
 
     <!-- Image Column -->
     <ng-container matColumnDef="imageUrl">
       <mat-header-cell *matHeaderCellDef></mat-header-cell>
-      <mat-cell *matCellDef="let product">
-        <img [src]="product.imageUrl" alt="{{ product.name }}" class="header-image">
+      <mat-cell *matCellDef="let item">
+        <img [src]="item.product.productImageUrl" alt="{{ item.product.productName }}" class="header-image">
       </mat-cell>
     </ng-container>
 

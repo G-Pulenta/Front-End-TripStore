@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from "../../services/user/user.service";
+import {HttpClient} from "@angular/common/http";
+import {forkJoin} from "rxjs";
 
 @Component({
   selector: 'app-cart',
@@ -9,57 +11,53 @@ import { UserService } from "../../services/user/user.service";
 export class CartComponent implements OnInit {
   shoppingCart: any[] = [];
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private http: HttpClient) {}
+
+
 
   ngOnInit() {
-    const userId = localStorage.getItem('id');
+    const cartId = localStorage.getItem('cartId');
 
-    if (userId) {
-      this.userService.getUser(userId).subscribe((user: any) => {
-        this.shoppingCart = user.shoppingCart;
-      });
+    if (cartId) {
+      this.http.get(`https://back-end-tripstore-production.up.railway.app/api/tripstore/v1/cart-items/shopping-carts/${cartId}`)
+        .subscribe((response: Object) => {
+          this.shoppingCart = response as any[];
+        });
     }
   }
 
   removeFromCart(item: any) {
-    const userId = localStorage.getItem('id');
+    const cartItemId = item.id; // Obtén el ID del item que deseas eliminar
 
-    if (userId) {
-      this.userService.getUser(userId).subscribe((user: any) => {
-        const updatedCart = user.shoppingCart.filter((product: any) => product.id !== item.id);
-        const updatedUser = { ...user, shoppingCart: updatedCart };
-
-        this.userService.updateUser(updatedUser).subscribe(() => {
-          this.shoppingCart = updatedCart;
-          console.log('Producto eliminado del carrito de compras del usuario');
-        });
+    this.http.delete(`https://back-end-tripstore-production.up.railway.app/api/tripstore/v1/cart-items/${cartItemId}`)
+      .subscribe(() => {
+        // Eliminación exitosa, realiza las acciones necesarias (por ejemplo, actualizar la lista de compras)
+        this.loadShoppingCart();
+      }, (error) => {
+        console.error('Error al eliminar el elemento del carrito:', error);
+        this.loadShoppingCart();
+        // Manejo de errores, muestra un mensaje de error o realiza acciones adicionales según sea necesario
       });
+
+
+  }
+  loadShoppingCart() {
+    const cartId = localStorage.getItem('cartId');
+
+    if (cartId) {
+      this.http.get(`https://back-end-tripstore-production.up.railway.app/api/tripstore/v1/cart-items`)
+        .subscribe((response: Object) => {
+          this.shoppingCart = response as any[];
+        });
     }
   }
 
-  checkout() {
 
-  }
-
-  clearCart() {
-    const userId = localStorage.getItem('id');
-
-    if (userId) {
-      this.userService.getUser(userId).subscribe((user: any) => {
-        const updatedUser = { ...user, shoppingCart: [] };
-
-        this.userService.updateUser(updatedUser).subscribe(() => {
-          this.shoppingCart = [];
-          console.log('Carrito de compras del usuario eliminado');
-        });
-      });
-    }
-  }
 
   getTotalPrice() {
     let total = 0;
     this.shoppingCart.forEach((item: any) => {
-      total += parseFloat(item.price);
+      total += parseFloat(item.product.productPrice);
     });
     return total.toFixed(2);
   }
