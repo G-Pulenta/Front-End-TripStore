@@ -32,6 +32,7 @@ export class ToolbarComponent implements OnInit{
   logout(): void {
     localStorage.removeItem('id');
     localStorage.removeItem('username');
+    localStorage.removeItem('cartId');
     this.router.navigate(['/login']).then(r => console.log('Logout exitoso.'));
   }
 }
