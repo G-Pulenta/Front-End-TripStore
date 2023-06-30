@@ -16,22 +16,22 @@
 
       <!-- Product Name Column -->
       <ng-container matColumnDef="productName">
-        <mat-header-cell *matHeaderCellDef>Product Name</mat-header-cell>
-        <mat-cell *matCellDef="let product"><h3>{{ product.productName }}</h3></mat-cell>
+        <mat-header-cell *matHeaderCellDef class="hide-on-small-screen">Product Name</mat-header-cell>
+        <mat-cell *matCellDef="let product" class="hide-on-small-screen"><h3>{{ product.productName }}</h3></mat-cell>
       </ng-container>
 
       <!-- Product Image Column -->
       <ng-container matColumnDef="productImage">
-        <mat-header-cell *matHeaderCellDef>Image</mat-header-cell>
-        <mat-cell *matCellDef="let product">
+        <mat-header-cell *matHeaderCellDef >Image</mat-header-cell>
+        <mat-cell *matCellDef="let product" class="image">
           <img [src]="product.productImageUrl" alt="{{ product.productImageUrl }}" class="header-image">
         </mat-cell>
       </ng-container>
 
       <!-- Product Description Column -->
-      <ng-container matColumnDef="productDescription">
-        <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
-        <mat-cell *matCellDef="let product">{{ product.productDescription }}</mat-cell>
+      <ng-container matColumnDef="productDescription" >
+        <mat-header-cell *matHeaderCellDef class="hide-on-small-screen">Description</mat-header-cell>
+        <mat-cell *matCellDef="let product" class="hide-on-small-screen">{{ product.productDescription }}</mat-cell>
       </ng-container>
 
       <!-- Product Price Column -->
@@ -42,8 +42,8 @@
 
       <!-- Product Rating Column -->
       <ng-container matColumnDef="productRating">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Rating</mat-header-cell>
-        <mat-cell *matCellDef="let product"><h2><strong>
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="hide-on-small-screen">Rating</mat-header-cell>
+        <mat-cell *matCellDef="let product" class="hide-on-small-screen"><h2><strong>
           <mat-icon *ngFor="let star of getRatingStars(product.productRating)">star</mat-icon>
         </strong></h2></mat-cell>
       </ng-container>
